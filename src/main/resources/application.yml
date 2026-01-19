@@ -1,0 +1,34 @@
+spring:
+  profiles:
+    active: dev
+
+server:
+  port: 8089   # DEV ??
+
+mybatis:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.planto.esgpwc05backend2.domain
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:postgresql://52.78.196.16:5772/esg?currentSchema=pwc05
+    username: esgpwc
+    password: esgpwcskv1e!$!@
+    driver-class-name: org.postgresql.Driver
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    url: jdbc:postgresql://52.78.196.16:5773/esg?currentSchema=pwc05
+    username: esgpwc
+    password: esgpwcskv1e!$!@
+    driver-class-name: org.postgresql.Driver
+

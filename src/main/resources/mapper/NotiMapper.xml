@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.planto.esgpwc05backend2.dao.NotiMapper">
+
+    <select id ="selectLatest" resultType="Noti">
+        SELECT
+            NOTI_NO AS notiNo,
+            TITLE AS title,
+            REG_DTM AS regDtm
+        FROM TB_NOTI
+        ORDER BY REG_DTM DESC
+        LIMIT 20
+    </select>
+</mapper>
