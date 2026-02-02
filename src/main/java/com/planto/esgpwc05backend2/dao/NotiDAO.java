@@ -16,4 +16,5 @@ public interface NotiDAO {
     List<NotiVO> selectLatest();
 
     int insertNoti(Map<String, Object> map);
+    int updateNoti(Map<String, Object> map);
 }

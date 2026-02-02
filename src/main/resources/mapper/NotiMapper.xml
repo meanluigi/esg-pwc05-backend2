@@ -17,24 +17,34 @@
         LIMIT 20
     </select>
     <insert id="insertNoti" parameterType="com.planto.esgpwc05backend2.domain.NotiVO">
-  INSERT INTO tb_noti (
-    NOTI_NO,
-    NOTI_FROM,
-    NOTI_SJ,
-    JUMP_PARAM,
-    REG_DT,
-    REG_ID,
-    UPDATE_DT,
-    UPDATE_ID
-  ) VALUES (
-    #{notiNo},
-    #{notiFrom},
-    #{notiSj},
-    #{jumpParam},
-    now(),
-    #{regId},
-    now(),
-    #{regId}
-  )
-</insert>
+        INSERT INTO tb_noti (
+            NOTI_NO,
+            NOTI_FROM,
+            NOTI_SJ,
+            JUMP_PARAM,
+            REG_DT,
+            REG_ID,
+            UPDATE_DT,
+            UPDATE_ID
+        ) VALUES (
+            #{notiNo},
+            #{notiFrom},
+            #{notiSj},
+            #{jumpParam},
+            now(),
+            #{regId},
+            now(),
+            #{regId}
+        )
+    </insert>
+    <update id="updateNoti" parameterType="com.planto.esgpwc05backend2.domain.NotiVO">
+        UPDATE tb_noti
+        SET
+            NOTI_FROM = #{notiFrom},
+            NOTI_SJ = #{notiSj},
+            JUMP_PARAM = #{jumpParam},
+            UPDATE_DT = now(),
+            UPDATE_ID = #{updateId}
+        WHERE NOTI_NO = #{notiNo}
+    </update>
 </mapper>

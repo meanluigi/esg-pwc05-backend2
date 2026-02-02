@@ -43,4 +43,10 @@ public class NotiController {
         service.insertNoti(map);
         return mav;
     }
+    @RequestMapping(value = "/updateNoti.do")
+    public ModelAndView updateNoti(@RequestBody Map<String, Object> map) {
+        ModelAndView mav = new ModelAndView("jsonView");
+        service.updateNoti(map);
+        return mav;
+    }
 }

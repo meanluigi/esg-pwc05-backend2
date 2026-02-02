@@ -16,4 +16,5 @@ public class NotiService {
     public int insertNoti(@RequestBody Map<String, Object> map) {
         return notiDAO.insertNoti(map);
     }
+    public int updateNoti(@RequestBody Map<String, Object> map) { return notiDAO.updateNoti(map); }
 }
