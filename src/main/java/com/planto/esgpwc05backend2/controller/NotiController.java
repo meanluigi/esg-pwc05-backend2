@@ -26,6 +26,9 @@ public class NotiController {
     public NotiController(NotiDAO notiDAO) {
         this.notiDAO = notiDAO;
     }
+    /**
+     * 알림 읽기(최근 꺼)
+     */
     @GetMapping("/latest")
     public List<NotiVO> latest() {
         return notiDAO.selectLatest();
@@ -43,12 +46,18 @@ public class NotiController {
         service.insertNoti(map);
         return mav;
     }
+    /**
+     * 알림 수정
+     */
     @RequestMapping(value = "/updateNoti.do")
     public ModelAndView updateNoti(@RequestBody Map<String, Object> map) {
         ModelAndView mav = new ModelAndView("jsonView");
         service.updateNoti(map);
         return mav;
     }
+    /**
+     * 알림 삭제(수정이랑 거의 동일)
+     */
     @RequestMapping(value = "/deleteNoti.do")
     public ModelAndView deleteNoti(@RequestBody Map<String, Object> map) {
         ModelAndView mav = new ModelAndView("jsonView");
