@@ -49,4 +49,10 @@ public class NotiController {
         service.updateNoti(map);
         return mav;
     }
+    @RequestMapping(value = "/deleteNoti.do")
+    public ModelAndView deleteNoti(@RequestBody Map<String, Object> map) {
+        ModelAndView mav = new ModelAndView("jsonView");
+        service.deleteNoti(map);
+        return mav;
+    }
 }

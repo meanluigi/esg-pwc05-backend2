@@ -17,4 +17,5 @@ public interface NotiDAO {
 
     int insertNoti(Map<String, Object> map);
     int updateNoti(Map<String, Object> map);
+    int deleteNoti(Map<String, Object> map);
 }

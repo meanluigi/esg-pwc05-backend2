@@ -47,4 +47,14 @@
             UPDATE_ID = #{updateId}
         WHERE NOTI_NO = #{notiNo}
     </update>
+    <delete id="deleteNoti" parameterType="com.planto.esgpwc05backend2.domain.NotiVO">
+        UPDATE tb_noti
+        SET
+            NOTI_FROM = #{notiFrom},
+            NOTI_SJ = #{notiSj},
+            JUMP_PARAM = #{jumpParam},
+            UPDATE_DT = now(),
+            UPDATE_ID = #{updateId}
+        WHERE NOTI_NO = #{notiNo}
+    </delete>
 </mapper>
